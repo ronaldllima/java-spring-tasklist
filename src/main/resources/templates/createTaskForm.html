@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Task</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create Task</h1>
+        <form th:action="@{/tasks/create}" th:object="${task}" method="post">
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" id="description" th:field="*{description}" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</body>
+
+</html>
